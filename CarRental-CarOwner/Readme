@@ -1,0 +1,289 @@
+# Car Management and Feedback Module
+
+This documentation provides a comprehensive overview of the Car Rental Owner Module, detailing its features, architecture, and usage. The module enables car owners to manage their cars, view feedback, and track performance metrics. It is designed to integrate seamlessly with an existing web application.
+
+---
+
+## Table of Contents
+1. [Overview](#overview)
+2. [Features](#features)
+3. [Architecture](#architecture)
+4. [API Endpoints](#api-endpoints)
+5. [Frontend Components](#frontend-components)
+6. [Setup and Installation](#setup-and-installation)
+7. [Usage Instructions](#usage-instructions)
+8. [Technical Details](#technical-details)
+9. [Contributing](#contributing)
+
+---
+
+## Overview
+
+The Car Management and Feedback Module is built using the MERN (MongoDB, Express.js, React.js, Node.js) stack. It allows car owners to perform CRUD (Create, Read, Update, Delete) operations on their car listings and view feedback from customers. The feedback system is designed to enhance transparency and improve service quality.
+
+---
+
+## Features
+
+### Car Management
+- **Add New Cars**: Car owners can add new cars to their inventory with details like make, model, year, price, and condition.
+- **Edit Existing Cars**: Owners can update car information such as availability, mileage, and type (Sale or Rent).
+- **Delete Cars**: Remove cars from the inventory.
+- **View Cars**: Display all cars owned by the logged-in user.
+
+### Feedback Management
+- **Submit Feedback**: Customers can provide feedback and rate cars.
+- **View Feedback**: Car owners can view feedback for their cars.
+- **Feedback Details**: Includes customer name, rating, comments, and date.
+
+### Dashboard
+- **Metrics Overview**: Displays total revenue, number of cars, and active rentals.
+- **Interactive Charts**: Track performance over time (future scope).
+
+---
+
+## Architecture
+
+The module follows a layered architecture, ensuring scalability and maintainability.
+
+### Backend
+- **Database**: MongoDB is used for storing data such as car details, user information, and feedback.
+- **Server**: Node.js with Express.js handles API requests and business logic.
+- **Routes**:
+  - `/api/cars`: Handles car-related operations.
+  - `/api/feedback`: Manages feedback-related endpoints.
+
+### Frontend
+- **Framework**: React.js is used for building a responsive user interface.
+- **Components**:
+  - `Header.jsx`: Navigation bar.
+  - `Footer.jsx`: Footer with contact details.
+  - `FeedbacksPage.jsx`: Displays car feedback.
+  - `EditCarsPage.jsx`: Manages car details.
+- **Styling**: CSS modules for responsive design.
+
+---
+
+## API Endpoints
+
+### Car Management Endpoints
+
+#### 1. Add a New Car
+- **Method**: POST
+- **Endpoint**: `/api/cars/add-car`
+- **Request Body**:
+```json
+{
+  "ownerId": "<user_id>",
+  "make": "Toyota",
+  "model": "Corolla",
+  "year": 2020,
+  "price": 15000,
+  "carType": "Sale",
+  "condition": "New",
+  "mileage": 0
+}
+```
+- **Response**:
+```json
+{
+  "message": "Car added successfully",
+  "car": { <car_details> }
+}
+```
+
+#### 2. Edit Car
+- **Method**: POST
+- **Endpoint**: `/api/cars/edit-car`
+- **Request Body**:
+```json
+{
+  "_id": "<car_id>",
+  "make": "Updated Make",
+  "model": "Updated Model"
+}
+```
+- **Response**:
+```json
+{
+  "message": "Car updated successfully"
+}
+```
+
+#### 3. Delete Car
+- **Method**: POST
+- **Endpoint**: `/api/cars/delete-car`
+- **Request Body**:
+```json
+{
+  "_id": "<car_id>"
+}
+```
+- **Response**:
+```json
+{
+  "message": "Car deleted successfully"
+}
+```
+
+#### 4. Get All Cars
+- **Method**: GET
+- **Endpoint**: `/api/cars/get-all-cars`
+- **Response**:
+```json
+[
+  { <car_details> },
+  { <car_details> }
+]
+```
+
+### Feedback Endpoints
+
+#### 1. Add Feedback
+- **Method**: POST
+- **Endpoint**: `/api/feedback/add`
+- **Request Body**:
+```json
+{
+  "userId": "<user_id>",
+  "carId": "<car_id>",
+  "feedbackText": "Great car!",
+  "rating": 5
+}
+```
+- **Response**:
+```json
+{
+  "message": "Feedback added successfully",
+  "feedback": { <feedback_details> }
+}
+```
+
+#### 2. Get All Feedbacks
+- **Method**: GET
+- **Endpoint**: `/api/feedback/all`
+- **Response**:
+```json
+[
+  {
+    "feedbackText": "Amazing experience",
+    "carId": "<car_id>",
+    "userId": "<user_id>"
+  },
+  { ... }
+]
+```
+
+---
+
+## Frontend Components
+
+### Header.jsx
+- Displays the navigation bar with links to various pages.
+- Dynamically highlights the active page.
+
+### Footer.jsx
+- Provides company contact details.
+- Sticks to the bottom of the page.
+
+### EditCarsPage.jsx
+- Form for adding a new car.
+- List of existing cars displayed in a horizontal row.
+- Edit and Delete functionality for each car.
+
+### FeedbacksPage.jsx
+- Fetches and displays feedbacks for all cars.
+- Lists feedback with associated car ID.
+
+---
+
+## Setup and Installation
+
+### Prerequisites
+- Node.js installed.
+- MongoDB instance running.
+- React.js environment set up.
+
+### Steps
+1. Clone the repository:
+   ```bash
+   git clone <repository_url>
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd car-management-module
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Set up `.env` file with the following:
+   ```env
+   PORT=3001
+   MONGO_URI=mongodb://localhost:27017/carManagement
+   JWT_SECRET=<your_jwt_secret>
+   ```
+5. Start the server:
+   ```bash
+   npm run server
+   ```
+6. Start the React frontend:
+   ```bash
+   npm start
+   ```
+
+---
+
+## Usage Instructions
+
+### Adding a New Car
+1. Navigate to the "Car Management" page.
+2. Fill in the car details in the provided form.
+3. Click "Add Car".
+
+### Viewing Feedback
+1. Go to the "Feedbacks" page.
+2. View feedback for each car in the list.
+
+### Editing or Deleting Cars
+1. Navigate to the "Car Management" page.
+2. Use the "Edit" or "Delete" buttons for respective actions.
+
+---
+
+## Technical Details
+
+### Authentication
+- JWT-based authentication is implemented.
+- Protect routes using the `protect` middleware.
+
+### Error Handling
+- Centralized error handling in the backend.
+- User-friendly error messages displayed in the frontend.
+
+### Responsive Design
+- CSS modules ensure compatibility across devices.
+
+---
+
+## Contributing
+
+Contributions are welcome! To contribute:
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Commit changes:
+   ```bash
+   git commit -m "Add new feature"
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature-name
+   ```
+5. Submit a pull request.
+
+---
+
+For any issues or suggestions, please contact [support@aurcorps.pk](mailto:support@aurcorps.pk).
