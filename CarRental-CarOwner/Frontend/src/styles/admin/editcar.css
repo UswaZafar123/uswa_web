@@ -1,0 +1,90 @@
+/* Add these styles to your CSS file */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Full viewport height */
+    width: 100%; /* Full viewport width */
+  }
+.container {
+    background-image: url("https://wallpapers.com/images/hd/4k-bmw-car-in-dark-c0ot64ri2fecu1pr.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh; /* Ensure the height covers the full viewport */
+    width : 5000vh;
+    color: #fff;
+  }
+  
+  .form-container {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .car-list {
+    margin-top: 20px;
+  }
+  
+  h2 {
+    text-align: center;
+    color: white;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input, select, button {
+    padding: 8px;
+    font-size: 16px;
+  }
+  
+  button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 12px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .car-list {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .car-item {
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    color: white;
+  }
+  
+  .car-item img {
+    margin-right: 12px;
+  }
+  
+  button {
+    margin-left: 10px;
+    padding: 8px 16px;
+  }
+  
+  

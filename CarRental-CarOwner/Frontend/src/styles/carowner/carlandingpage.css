@@ -1,0 +1,49 @@
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    background-image: url('https://via.placeholder.com/1920x1080'); /* Use placeholder for testing */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  /* Overlay */
+  .overlay {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px 30px;
+    border-radius: 10px;
+    z-index: 2;
+  }
+  
+  .overlay h1,
+  .overlay p {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+  /* Ensure the container spans the full viewport height */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Allow the main content to stretch and take up remaining space */
+  .main-content {
+    flex: 1;
+  }
+  
+  /* Ensure footer stays at the bottom */
+  footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+  }
+  

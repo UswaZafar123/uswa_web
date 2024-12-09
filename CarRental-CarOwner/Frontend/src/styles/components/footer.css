@@ -1,0 +1,15 @@
+/* Footer styling */
+.admin-footer {
+  background-color: #0a1f44; /* Dark blue background */
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.admin-footer p {
+  margin: 0;
+  font-size: 1rem;
+}

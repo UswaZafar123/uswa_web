@@ -1,0 +1,54 @@
+.feedbacks-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #000; /* Ensure it matches your theme */
+  color: white;
+}
+
+.content {
+  flex: 1; /* Pushes the footer to the bottom */
+  padding-top: 80px; /* Adjust based on your navbar height */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px; /* Add padding around content */
+}
+
+.feedback-heading {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.car-feedback-card {
+  background: #1c1c1c;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.car-feedback-card h2 {
+  margin-bottom: 10px;
+}
+
+.car-feedback-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.car-feedback-card li {
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #2d2d2d;
+  border-radius: 4px;
+}
+
+footer {
+  background: #333;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: auto; /* Ensures it stays at the bottom */
+}

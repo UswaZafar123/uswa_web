@@ -1,0 +1,177 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Black background */
+    color: #e0e0e0; /* Light text color for contrast */
+}
+
+.landing-page {
+    padding: 20px;
+}
+
+/* Header Styling */
+.header {
+    background-color: #333333; /* Gray for navbar */
+    color: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* Section Styling */
+.dashboard,
+.notifications,
+.car-listings {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #1e1e1e; /* Dark grey for sections */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Section Headings */
+.dashboard h2,
+.notifications h2,
+.car-listings h2 {
+    color: #64b5f6; /* Light blue for section titles */
+}
+
+/* Dashboard Metrics */
+.dashboard-metrics {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Ensures metrics stack on smaller screens */
+}
+
+.metric {
+    background-color: #0d47a1; /* Dark blue for metrics */
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    flex: 1 1 30%; /* Flexbox for responsiveness */
+    min-width: 200px; /* Minimum width for smaller screens */
+}
+
+.metric h3 {
+    margin: 0;
+    color: white; /* White text for titles */
+}
+
+.metric p {
+    margin: 10px 0 0;
+    font-size: 18px;
+    color: #64b5f6; /* Light blue for metric values */
+}
+
+/* Notifications Styling */
+.notifications ul {
+    list-style: none;
+    padding: 0;
+}
+
+.notifications li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #0d47a1; /* Dark blue for notifications */
+    border-left: 5px solid #64b5f6; /* Light blue border */
+    border-radius: 5px;
+    color: white;
+}
+
+/* Car Listings */
+.car-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Center cards on smaller screens */
+}
+
+.car-card {
+    background-color: #1e1e1e; /* Dark grey for car cards */
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    width: calc(100% - 40px); /* Full width minus padding on mobile */
+    max-width: 250px; /* Limit width for larger screens */
+    flex: 1 1 calc(50% - 20px); /* Adjusts layout for tablets */
+}
+
+.car-card h3 {
+    margin: 0 0 10px;
+    color: #64b5f6; /* Light blue for titles */
+}
+
+.car-card p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #e0e0e0; /* Light text for descriptions */
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #333333; /* Gray for footer, similar to navbar */
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+/* Ensure the container spans the full viewport height */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Allow the main content to stretch and take up remaining space */
+  .main-content {
+    flex: 1;
+  }
+  
+  /* Ensure footer stays at the bottom */
+  footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+  }
+  
+/* Media Queries for Responsiveness */
+
+/* For smaller tablets and large phones */
+@media (max-width: 768px) {
+    .dashboard-metrics {
+        flex-direction: column; /* Stack metrics vertically */
+    }
+
+    .metric {
+        flex: 1 1 100%; /* Full width for smaller screens */
+        margin-bottom: 20px;
+    }
+
+    .car-card {
+        flex: 1 1 100%; /* Full width for car cards */
+    }
+}
+
+/* For smaller phones */
+@media (max-width: 480px) {
+    .dashboard h2,
+    .notifications h2,
+    .car-listings h2 {
+        font-size: 18px; /* Smaller heading font size */
+    }
+
+    .metric p {
+        font-size: 16px; /* Reduce text size */
+    }
+
+    .car-card {
+        padding: 10px; /* Reduce padding */
+        width: 100%; /* Full width for small phones */
+    }
+}
