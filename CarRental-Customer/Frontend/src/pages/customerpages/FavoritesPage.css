@@ -1,0 +1,79 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('https://wallpapers.com/images/hd/4k-bmw-car-in-dark-c0ot64ri2fecu1pr.jpg'); /* Replace with your background image URL */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #333; /* Text color */
+}
+
+.favorites-page {
+  padding: 20px;
+  text-align: center;
+}
+
+.favorites-page h1 {
+  font-size: 2.5rem;
+  color: #0056b3; /* Highlighted header color */
+  margin-bottom: 30px;
+}
+
+/* Container for Cards */
+.favorites-list {
+  display: flex;
+  flex-direction: column; /* Arrange items in a column */
+  align-items: center; /* Center items horizontally */
+  gap: 20px; /* Space between cards */
+}
+
+/* Card Styles */
+.favorite-item {
+  background-color: #ffffff; /* White background */
+  color: #333; /* Dark text for readability */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  width: 90%; /* Take up 90% of the container */
+  max-width: 500px; /* Maximum card width */
+  text-align: center; /* Center-align the text */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.favorite-item:hover {
+  transform: translateY(-5px); /* Lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Deeper shadow on hover */
+}
+
+.favorite-item h3 {
+  font-size: 1.5rem;
+  color: #0056b3; /* Highlighted text for car title */
+  margin-bottom: 10px;
+}
+
+.favorite-item p {
+  font-size: 1rem;
+  color: #555; /* Subtle text for details */
+  margin: 5px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .favorites-page h1 {
+    font-size: 2rem;
+  }
+
+  .favorite-item {
+    width: 100%; /* Full width for smaller screens */
+  }
+
+  .favorite-item h3 {
+    font-size: 1.2rem;
+  }
+
+  .favorite-item p {
+    font-size: 0.9rem;
+  }
+}

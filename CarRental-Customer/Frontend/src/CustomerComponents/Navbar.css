@@ -1,0 +1,48 @@
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #2f3e52, #c2c9db);
+    height: 60px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-logo img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #000;
+  }
+  
+  .navbar-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navbar-link {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-link:hover {
+    color: #007bff;
+  }
+  
+  .navbar-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .navbar-profile-img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 2px solid #f5f5f5;
+    cursor: pointer;
+  }
+  
